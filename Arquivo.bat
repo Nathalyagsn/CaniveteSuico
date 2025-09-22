@@ -65,24 +65,19 @@ GOTO menu_softwares
 
 :instalar_chrome
 CLS
-ECHO Iniciando a instalacao silenciosa do Google Chrome...
-
-rem O comando abaixo executa o instalador que esta na pasta "Programas".
-start /wait Programas\ChromeSetup.exe /silent /install
-
+ECHO Conectando e baixando o Google Chrome... Por favor, aguarde.
+winget install Google.Chrome --silent -h --accept-source-agreements
 ECHO.
-ECHO A instalacao foi concluida.
+ECHO Google Chrome instalado com sucesso!
 PAUSE
 GOTO menu_softwares
 
 :instalar_adobe
 CLS
-ECHO Iniciando a intalacao silenciosa do Adobe Reader...
-
-rem O comando abaixo executa o instalador que esta na pasta "Programas".
-start /wait Programas\Reader_br_install.exe /silent /install
-
+ECHO Conectando e baixando o Adobe Acrobat Reader... Por favor, aguarde.
+rem Note que o ID do Adobe Reader e um pouco diferente.
+winget install Adobe.Acrobat.Reader.64-bit --silent -h --accept-source-agreements
 ECHO.
-ECHO A instalacao foi concluida.
+ECHO Adobe Acrobat Reader instalado com sucesso!
 PAUSE
 GOTO menu_softwares
