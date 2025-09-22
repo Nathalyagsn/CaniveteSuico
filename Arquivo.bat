@@ -48,6 +48,7 @@ ECHO =================================
 ECHO.
 ECHO   [1] Instalar Google Chrome
 ECHO   [2] Instalar Adobe Reader
+ECHO   [3] Instalar WinRar
 ECHO.
 ECHO   [9] Voltar ao Menu Principal
 ECHO.
@@ -56,6 +57,7 @@ SET /P escolha=Qual software deseja instalar?:
 
 IF "%escolha%"=="1" GOTO instalar_chrome
 IF "%escolha%"=="2" GOTO instalar_adobe
+IF "%escolha%"=="3" GOTO instalar_winrar
 IF "%escolha%"=="9" GOTO menu_principal
 
 ECHO Opcao Invalida! Pressione qualquer tecla para tentar novamente.
@@ -78,5 +80,14 @@ ECHO Conectando e baixando o Adobe Acrobat Reader... Por favor, aguarde.
 winget install Adobe.Acrobat.Reader.64-bit --silent -h --accept-source-agreements
 ECHO.
 ECHO Adobe Acrobat Reader instalado com sucesso!
+PAUSE
+GOTO menu_softwares
+
+:instalar_winrar
+CLS
+ECHO Conectando e baixando o Winrar... Por favor, aguarde.
+winget install RARLab.WinRAR --silent -h --accept-source-agreements
+ECHO.
+ECHO WinRar instalado com sucesso!
 PAUSE
 GOTO menu_softwares
