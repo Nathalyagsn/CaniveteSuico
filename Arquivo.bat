@@ -75,7 +75,6 @@ GOTO menu_softwares
 :instalar_adobe
 CLS
 ECHO Conectando e baixando o Adobe Acrobat Reader... Por favor, aguarde.
-rem Note que o ID do Adobe Reader e um pouco diferente.
 winget install Adobe.Acrobat.Reader.64-bit --silent -h --accept-source-agreements
 ECHO.
 ECHO Adobe Acrobat Reader instalado com sucesso!
