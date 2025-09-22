@@ -8,6 +8,7 @@ ECHO              MENU
 ECHO =================================
 ECHO.
 ECHO   [1] Instalar Softwares
+ECHO   [2] Abrir bloco de notas
 ECHO.
 ECHO   [0] Sair
 ECHO.
@@ -15,11 +16,28 @@ ECHO.
 SET /P opcao=Escolha uma opcao: 
 
 IF "%opcao%"=="1" GOTO menu_softwares
+IF "%opcao%"=="2" GOTO abrir_notepad
 IF "%opcao%"=="0" EXIT
 
 ECHO Opcao Invalida! Pressione qualquer tecla para tentar novamente.
 PAUSE > NUL
 GOTO menu_principal
+
+:abrir_notepad
+CLS
+ECHO =========================
+ECHO        BLOCO DE NOTAS
+ECHO =========================
+ECHO.
+ECHO Abrindo o bloco de notas...
+
+start notepad
+
+ECHO.
+ECHO O bloco de notas foi iniciado. Pressione qualquer tecla para voltar ao menu.
+PAUSE>NUL
+GOTO menu_principal
+
 
 
 :menu_softwares
