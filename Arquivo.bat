@@ -98,7 +98,7 @@ GOTO menu_softwares
 
 :instalar_teams
 CLS
-ECHO Conectando e baixando o winrar... Por favor, aguarde.
+ECHO Conectando e baixando o teams... Por favor, aguarde.
 winget install Microsoft.Teams --silent -h --accept-source-agreements
 ECHO.
 ECHO Teams instalado com sucesso!
