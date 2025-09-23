@@ -49,8 +49,9 @@ ECHO.
 ECHO   [1] Instalar Google Chrome
 ECHO   [2] Instalar Adobe Reader
 ECHO   [3] Instalar WinRar
+ECHO   [4] Instalar Teams
 ECHO.
-ECHO   [9] Voltar ao Menu Principal
+ECHO   [0] Voltar ao Menu Principal
 ECHO.
 
 SET /P escolha=Qual software deseja instalar?: 
@@ -58,7 +59,8 @@ SET /P escolha=Qual software deseja instalar?:
 IF "%escolha%"=="1" GOTO instalar_chrome
 IF "%escolha%"=="2" GOTO instalar_adobe
 IF "%escolha%"=="3" GOTO instalar_winrar
-IF "%escolha%"=="9" GOTO menu_principal
+IF "%escolha%"=="4" GOTO instalar_teams
+IF "%escolha%"=="0" GOTO menu_principal
 
 ECHO Opcao Invalida! Pressione qualquer tecla para tentar novamente.
 PAUSE > NUL
@@ -89,5 +91,14 @@ ECHO Conectando e baixando o Winrar... Por favor, aguarde.
 winget install RARLab.WinRAR --silent -h --accept-source-agreements
 ECHO.
 ECHO WinRar instalado com sucesso!
+PAUSE
+GOTO menu_softwares
+
+:instalar_teams
+CLS
+ECHO Conectando e baixando o winrar... Por fvor, aguarde.
+winget install Microsoft.Teams --silent -h --accept-source-agreements
+ECHO.
+ECHO Teams instalado com sucesso!
 PAUSE
 GOTO menu_softwares
