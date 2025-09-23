@@ -50,6 +50,7 @@ ECHO   [1] Instalar Google Chrome
 ECHO   [2] Instalar Adobe Reader
 ECHO   [3] Instalar WinRar
 ECHO   [4] Instalar Teams
+ECHO   [5] Instalar AnyDesk
 ECHO.
 ECHO   [0] Voltar ao Menu Principal
 ECHO.
@@ -60,6 +61,7 @@ IF "%escolha%"=="1" GOTO instalar_chrome
 IF "%escolha%"=="2" GOTO instalar_adobe
 IF "%escolha%"=="3" GOTO instalar_winrar
 IF "%escolha%"=="4" GOTO instalar_teams
+IF "%escolha%"=="5" GOTO instalar_anydesk
 IF "%escolha%"=="0" GOTO menu_principal
 
 ECHO Opcao Invalida! Pressione qualquer tecla para tentar novamente.
@@ -96,9 +98,18 @@ GOTO menu_softwares
 
 :instalar_teams
 CLS
-ECHO Conectando e baixando o winrar... Por fvor, aguarde.
+ECHO Conectando e baixando o winrar... Por favor, aguarde.
 winget install Microsoft.Teams --silent -h --accept-source-agreements
 ECHO.
 ECHO Teams instalado com sucesso!
+PAUSE
+GOTO menu_softwares
+
+:instalar_anydesk
+CLS
+ECHO Conectando e baixando o AnyDesk... Por favor, aguarda.
+winget install AnyDesk.AnyDesk --silent -h --accept-source-agreements
+ECHO.
+ECHO AnyDesk instalado com sucesso!
 PAUSE
 GOTO menu_softwares
