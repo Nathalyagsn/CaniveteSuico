@@ -51,6 +51,8 @@ ECHO   [2] Instalar Adobe Reader
 ECHO   [3] Instalar WinRar
 ECHO   [4] Instalar Teams
 ECHO   [5] Instalar AnyDesk
+ECHO   [6] Instalar Klite
+ECHO   [7] Instalar Revo
 ECHO.
 ECHO   [0] Voltar ao Menu Principal
 ECHO.
@@ -62,6 +64,8 @@ IF "%escolha%"=="2" GOTO instalar_adobe
 IF "%escolha%"=="3" GOTO instalar_winrar
 IF "%escolha%"=="4" GOTO instalar_teams
 IF "%escolha%"=="5" GOTO instalar_anydesk
+IF "%escolha%"=="6" GOTO instalar_klite
+IF "%escolha%"=="7" GOTO instalar_revo
 IF "%escolha%"=="0" GOTO menu_principal
 
 ECHO Opcao Invalida! Pressione qualquer tecla para tentar novamente.
@@ -107,9 +111,27 @@ GOTO menu_softwares
 
 :instalar_anydesk
 CLS
-ECHO Conectando e baixando o AnyDesk... Por favor, aguarda.
+ECHO Conectando e baixando o AnyDesk... Por favor, aguarde.
 winget install AnyDesk.AnyDesk --silent -h --accept-source-agreements
 ECHO.
 ECHO AnyDesk instalado com sucesso!
+PAUSE
+GOTO menu_softwares
+
+:instalar_klite
+CLS
+ECHO Conectando e baixando o AnyDesk... Por favor, aguarde.
+winget install CodecGuide.K-LiteCodecPack.Standard --silent -h --accept-source-agreements
+ECHO.
+ECHO Klite instalado com sucesso!
+PAUSE
+GOTO menu_softwares
+
+:instalar_revo
+CLS
+ECHO Conectando e baixando o Revo... Por favor, aguarde.
+winget RevoUninstaller.RevoUninstaller --silent -h --accept-source-agreements
+ECHO.
+ECHO Revo instalado com sucesso!
 PAUSE
 GOTO menu_softwares
