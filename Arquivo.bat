@@ -120,7 +120,7 @@ GOTO menu_softwares
 
 :instalar_klite
 CLS
-ECHO Conectando e baixando o AnyDesk... Por favor, aguarde.
+ECHO Conectando e baixando o Klite... Por favor, aguarde.
 winget install CodecGuide.K-LiteCodecPack.Standard --silent -h --accept-source-agreements
 ECHO.
 ECHO Klite instalado com sucesso!
@@ -130,7 +130,7 @@ GOTO menu_softwares
 :instalar_revo
 CLS
 ECHO Conectando e baixando o Revo... Por favor, aguarde.
-winget RevoUninstaller.RevoUninstaller --silent -h --accept-source-agreements
+winget install RevoUninstaller.RevoUninstaller --silent -h --accept-source-agreements
 ECHO.
 ECHO Revo instalado com sucesso!
 PAUSE
