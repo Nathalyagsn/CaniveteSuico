@@ -9,6 +9,7 @@ ECHO =================================
 ECHO.
 ECHO   [1] Instalar Softwares
 ECHO   [2] Abrir bloco de notas
+ECHO   [3] Verificar Windows Update
 ECHO.
 ECHO   [0] Sair
 ECHO.
@@ -17,10 +18,35 @@ SET /P opcao=Escolha uma opcao:
 
 IF "%opcao%"=="1" GOTO menu_softwares
 IF "%opcao%"=="2" GOTO abrir_notepad
+IF "%opcao%"=="3" GOTO windows_update
 IF "%opcao%"=="0" EXIT
 
 ECHO Opcao Invalida! Pressione qualquer tecla para tentar novamente.
 PAUSE > NUL
+GOTO menu_principal
+
+:windows_update
+CLS
+ECHO ====================================================
+ECHO        VERIFICACAO AUTOMATICA - POWERSHELL
+ECHO ====================================================
+ECHO.
+ECHO Esta funcao ira usar o PowerShell para verificar, baixar
+ECHO e instalar as atualizacoes do Windows.
+ECHO.
+ECHO O processo sera exibido nesta tela.
+ECHO.
+ECHO O COMPUTADOR PODERA SER REINICIADO AUTOMATICAMENTE.
+ECHO.
+PAUSE
+CLS
+
+rem O comando abaixo executa o script PowerShell
+powershell.exe -ExecutionPolicy Bypass -File "%~dp0\VerificarUpdates.ps1"
+
+ECHO.
+ECHO O processo do PowerShell foi finalizado.
+PAUSE
 GOTO menu_principal
 
 :abrir_notepad
