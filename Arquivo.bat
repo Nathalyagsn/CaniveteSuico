@@ -28,25 +28,17 @@ GOTO menu_principal
 :windows_update
 CLS
 ECHO ====================================================
-ECHO        VERIFICACAO AUTOMATICA - POWERSHELL
+ECHO        ABRINDO A TELA DE ATUALIZACOES DO WINDOWS
 ECHO ====================================================
 ECHO.
-ECHO Esta funcao ira usar o PowerShell para verificar, baixar
-ECHO e instalar as atualizacoes do Windows.
+ECHO A tela de configuracoes do Windows Update sera aberta.
 ECHO.
-ECHO O processo sera exibido nesta tela.
+ECHO Pressione qualquer tecla para voltar ao menu principal.
 ECHO.
-ECHO O COMPUTADOR PODERA SER REINICIADO AUTOMATICAMENTE.
-ECHO.
-PAUSE
-CLS
 
-rem O comando abaixo executa o script PowerShell
-powershell.exe -ExecutionPolicy Bypass -File "%~dp0\VerificarUpdates.ps1"
+start ms-settings:windowsupdate
 
-ECHO.
-ECHO O processo do PowerShell foi finalizado.
-PAUSE
+PAUSE > NUL
 GOTO menu_principal
 
 :abrir_notepad
