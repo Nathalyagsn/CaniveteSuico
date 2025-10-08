@@ -10,7 +10,8 @@ ECHO.
 ECHO   [1] Instalar Softwares
 ECHO   [2] Abrir bloco de notas
 ECHO   [3] Verificar Windows Update
-ECHO   [4] Limpar fila de impressão Zebra
+ECHO   [4] Limpar fila de impressao Zebra
+ECHO   [5] Limpeza de arquivos temporarios/DNS/Navegadores
 ECHO.
 ECHO   [0] Sair
 ECHO.
@@ -21,10 +22,74 @@ IF "%opcao%"=="1" GOTO menu_softwares
 IF "%opcao%"=="2" GOTO abrir_notepad
 IF "%opcao%"=="3" GOTO windows_update
 IF "%opcao%"=="4" GOTO limpar_zebra
+IF "%opcao%"=="5" GOTO limpar_cash
 IF "%opcao%"=="0" EXIT
 
 ECHO Opcao Invalida! Pressione qualquer tecla para tentar novamente.
 PAUSE > NUL
+GOTO menu_principal
+
+:limpar_cash
+CLS
+ECHO ====================================================
+ECHO      ROTINA DE LIMPEZA COMPLETA DE ARQUIVOS
+ECHO ====================================================
+ECHO.
+ECHO Alguns navegadores podem precisar ser fechados.
+ECHO.
+PAUSE
+CLS
+
+ECHO.
+ECHO [PASSO 1 de 7] Limpando arquivos temporarios...
+del /S /F /Q "%TEMP%\*.*" > NUL 2>&1
+del /S /F /Q "%SystemRoot%\Temp\*.*" > NUL 2>&1
+rd /S /Q "%TEMP%" > NUL 2>&1
+md "%TEMP%" > NUL 2>&1
+ECHO    -> Concluido.
+ECHO.
+
+ECHO [PASSO 2 de 7] Limpando cache DNS...
+ipconfig /flushdns
+ECHO    -> Concluido.
+ECHO.
+
+ECHO [PASSO 3 de 7] Limpando cache de miniaturas do Explorer...
+del /A:H /F /S /Q "%LocalAppData%\Microsoft\Windows\Explorer\thumbcache_*.db" > NUL 2>&1
+ECHO    -> Concluido.
+ECHO.
+
+ECHO [PASSO 4 de 7] Limpando arquivos de prefetch...
+del /F /S /Q C:\Windows\Prefetch\*.* > NUL 2>&1
+ECHO    -> Concluido.
+ECHO.
+
+ECHO [PASSO 5 de 7] Limpando cache de atualizacoes do Windows...
+net stop wuauserv > NUL 2>&1
+net stop bits > NUL 2>&1
+del /f /s /q %windir%\SoftwareDistribution\Download\*.* > NUL 2>&1
+net start wuauserv > NUL 2>&1
+net start bits > NUL 2>&1
+ECHO    -> Concluido.
+ECHO.
+
+ECHO [PASSO 6 de 7] Limpando cache do Microsoft Edge...
+del /F /S /Q "%LocalAppData%\Microsoft\Edge\User Data\Default\Cache\*.*" > NUL 2>&1
+del /F /S /Q "%LocalAppData%\Microsoft\Edge\User Data\Default\Code Cache\*.*" > NUL 2>&1
+ECHO    -> Concluido.
+ECHO.
+
+ECHO [PASSO 7 de 7] Limpando cache do Google Chrome...
+del /F /S /Q "%LocalAppData%\Google\Chrome\User Data\Default\Cache\*.*" > NUL 2>&1
+del /F /S /Q "%LocalAppData%\Google\Chrome\User Data\Default\Code Cache\*.*" > NUL 2>&1
+ECHO    -> Concluido.
+ECHO.
+
+ECHO ---------------------------------------
+ECHO.
+ECHO    LIMPEZA COMPLETA FINALIZADA COM SUCESSO!
+ECHO.
+PAUSE
 GOTO menu_principal
 
 :limpar_zebra
