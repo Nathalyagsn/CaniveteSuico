@@ -10,6 +10,7 @@ ECHO.
 ECHO   [1] Instalar Softwares
 ECHO   [2] Abrir bloco de notas
 ECHO   [3] Verificar Windows Update
+ECHO   [4] Limpar fila de impressão Zebra
 ECHO.
 ECHO   [0] Sair
 ECHO.
@@ -19,11 +20,40 @@ SET /P opcao=Escolha uma opcao:
 IF "%opcao%"=="1" GOTO menu_softwares
 IF "%opcao%"=="2" GOTO abrir_notepad
 IF "%opcao%"=="3" GOTO windows_update
+IF "%opcao%"=="4" GOTO limpar_zebra
 IF "%opcao%"=="0" EXIT
 
 ECHO Opcao Invalida! Pressione qualquer tecla para tentar novamente.
 PAUSE > NUL
 GOTO menu_principal
+
+:limpar_zebra
+CLS
+ECHO =======================================
+ECHO      LIMPEZA DA FILA DE IMPRESSAO
+ECHO =======================================
+ECHO.
+PAUSE
+CLS
+
+ECHO [PASSO 1 de 3] Parando o servico de Spooler de Impressao...
+net stop spooler
+ECHO.
+
+ECHO [PASSO 2 de 3] Apagando arquivos temporarios da fila...
+del /Q /F %systemroot%\System32\spool\PRINTERS\*.*
+ECHO.
+
+ECHO [PASSO 3 de 3] Reiniciando o servico de Spooler de Impressao...
+net start spooler
+ECHO.
+ECHO ---------------------------------------
+ECHO.
+ECHO A fila de impressao foi limpa com sucesso!
+ECHO.
+PAUSE
+GOTO menu_principal
+
 
 :windows_update
 CLS
