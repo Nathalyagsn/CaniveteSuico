@@ -13,6 +13,7 @@ ECHO   [3] Verificar Windows Update
 ECHO   [4] Limpar fila de impressao Zebra
 ECHO   [5] Limpeza de arquivos temporarios/DNS/Navegadores
 ECHO   [6] Visualizar frequencia da RAM
+ECHO   [7] Relatorio da bateria
 ECHO.
 ECHO   [0] Sair
 ECHO.
@@ -25,9 +26,25 @@ IF "%opcao%"=="3" GOTO windows_update
 IF "%opcao%"=="4" GOTO limpar_zebra
 IF "%opcao%"=="5" GOTO limpar_cash
 IF "%opcao%"=="6" GOTO verificar_ram
+IF "%opcao%"=="7" GOTO verificar_bateria
 IF "%opcao%"=="0" EXIT
 
 ECHO Opcao Invalida! Pressione qualquer tecla para tentar novamente.
+PAUSE > NUL
+GOTO menu_principal
+
+:verificar_bateria
+CLS
+ECHO ============================================
+ECHO        VERIFICANDO SAUDE DA BATERIA
+ECHO ============================================
+ECHO.
+
+ECHO Aguarde um momento...
+powercfg /batteryreport
+
+ECHO.
+ECHO Pressione qualquer tecla para voltar ao menu principal.
 PAUSE > NUL
 GOTO menu_principal
 
