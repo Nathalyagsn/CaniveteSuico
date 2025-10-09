@@ -13,7 +13,6 @@ ECHO   [3] Verificar Windows Update
 ECHO   [4] Limpar fila de impressao Zebra
 ECHO   [5] Limpeza de arquivos temporarios/DNS/Navegadores
 ECHO   [6] Visualizar frequencia da RAM
-ECHO   [7] Verificar saude da bateria
 ECHO.
 ECHO   [0] Sair
 ECHO.
@@ -26,44 +25,10 @@ IF "%opcao%"=="3" GOTO windows_update
 IF "%opcao%"=="4" GOTO limpar_zebra
 IF "%opcao%"=="5" GOTO limpar_cash
 IF "%opcao%"=="6" GOTO verificar_ram
-IF "%opcao%"=="7" GOTO verificar_bateria
 IF "%opcao%"=="0" EXIT
 
 ECHO Opcao Invalida! Pressione qualquer tecla para tentar novamente.
 PAUSE > NUL
-GOTO menu_principal
-
-:relatorio_bateria
-CLS
-ECHO ====================================================
-ECHO         RELATORIO DE SAUDE DA BATERIA
-ECHO ====================================================
-ECHO.
-ECHO Esta funcao ira gerar um relatorio detalhado (HTML)
-ECHO sobre o historico e a saude da bateria do notebook.
-ECHO.
-ECHO O arquivo sera salvo na sua Area de Trabalho como
-ECHO 'relatorio_bateria.html' e aberto automaticamente.
-ECHO.
-PAUSE
-CLS
-
-ECHO Gerando relatorio... Por favor, aguarde.
-
-rem O comando abaixo gera o relatorio e especifica a Area de Trabalho como destino
-powercfg /batteryreport /output "%USERPROFILE%\Desktop\relatorio_bateria.html"
-
-ECHO.
-ECHO ----------------------------------------------------
-ECHO.
-ECHO Relatorio gerado com sucesso na sua Area de Trabalho!
-ECHO Abrindo o arquivo no seu navegador padrao...
-ECHO.
-
-rem O comando abaixo abre o relatorio que acabamos de criar
-start "" "%USERPROFILE%\Desktop\relatorio_bateria.html"
-
-PAUSE
 GOTO menu_principal
 
 :verificar_ram
