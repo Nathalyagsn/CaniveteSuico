@@ -17,7 +17,7 @@ ECHO   [7] Relatorio da bateria
 ECHO   [8] Renovar endereco IP
 ECHO.
 ECHO   [0] Sair
-ECHO.
+ECHO.                                
 
 SET /P opcao=Escolha uma opcao: 
 
@@ -55,7 +55,7 @@ ECHO.
 ECHO Processo concluido!
 ECHO Pressione qualquer tecla para voltar ao menu.
 pause > nul
-goto :menu
+goto :menu_principal
 
 
 :verificar_bateria
