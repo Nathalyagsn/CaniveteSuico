@@ -14,6 +14,7 @@ ECHO   [4] Limpar fila de impressao Zebra
 ECHO   [5] Limpeza de arquivos temporarios/DNS/Navegadores
 ECHO   [6] Visualizar frequencia da RAM
 ECHO   [7] Relatorio da bateria
+ECHO   [8] Renovar endereco IP
 ECHO.
 ECHO   [0] Sair
 ECHO.
@@ -27,11 +28,35 @@ IF "%opcao%"=="4" GOTO limpar_zebra
 IF "%opcao%"=="5" GOTO limpar_cash
 IF "%opcao%"=="6" GOTO verificar_ram
 IF "%opcao%"=="7" GOTO verificar_bateria
+IF "%opcao%"=="8" GOTO renovar_ip
 IF "%opcao%"=="0" EXIT
 
 ECHO Opcao Invalida! Pressione qualquer tecla para tentar novamente.
 PAUSE > NUL
 GOTO menu_principal
+
+:renovar_ip
+CLS
+ECHO ============================================
+ECHO        RENOVANDO ENDEREÇO IP
+ECHO ============================================
+ECHO.
+ECHO Limpando o cache DNS...
+ipconfig /flushdns
+ECHO.
+ECHO Liberando o endereco IP atual...
+ipconfig /release
+ECHO.
+ECHO Solicitando um novo endereco IP...
+ipconfig /renew
+ECHO.
+ECHO ============================================
+ECHO.
+ECHO Processo concluido!
+ECHO Pressione qualquer tecla para voltar ao menu.
+pause > nul
+goto :menu
+
 
 :verificar_bateria
 CLS
