@@ -15,6 +15,7 @@ ECHO   [5] Limpeza de arquivos temporarios/DNS/Navegadores
 ECHO   [6] Visualizar frequencia da RAM
 ECHO   [7] Relatorio da bateria
 ECHO   [8] Renovar endereco IP
+ECHO   [9] Ver Service Tag
 ECHO.
 ECHO   [0] Sair
 ECHO.                                
@@ -29,9 +30,28 @@ IF "%opcao%"=="5" GOTO limpar_cash
 IF "%opcao%"=="6" GOTO verificar_ram
 IF "%opcao%"=="7" GOTO verificar_bateria
 IF "%opcao%"=="8" GOTO renovar_ip
+IF "%opcao%"=="9" GOTO service_tag
 IF "%opcao%"=="0" EXIT
 
 ECHO Opcao Invalida! Pressione qualquer tecla para tentar novamente.
+PAUSE > NUL
+GOTO menu_principal
+
+:service_tag
+CLS
+ECHO ============================================
+ECHO         VISUALIZAR NUMERO DE SERIE
+ECHO ============================================
+ECHO.
+ECHO Obtendo Service Tag (Serial Number)...
+ECHO.
+
+powershell -command "Get-CimInstance -ClassName Win32_Bios | Select-Object -ExpandProperty SerialNumber"
+
+ECHO.
+ECHO --------------------------------------------
+ECHO.
+ECHO Pressione qualquer tecla para voltar ao menu.
 PAUSE > NUL
 GOTO menu_principal
 
