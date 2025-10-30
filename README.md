@@ -7,12 +7,12 @@ Um script de automação (`.bat`) focado em agilizar tarefas comuns de suporte e
 
 ## 📜 Índice
 
-* [O que é?](#🧐-o-que-é)
-* [✨ Funcionalidades Principais](#✨-funcionalidades-principais)
-* [🚀 Como Usar](#🚀-como-usar)
-* [⚠️ Pré-requisitos](#⚠️-pré-requisitos)
-* [🤝 Como Contribuir](#🤝-como-contribuir)
-* [👨‍💻 Autor](#👨‍💻-autor)
+* [O que é?](#o-que-é)
+* [✨ Funcionalidades Principais](#funcionalidades-principais)
+* [🚀 Como Usar](#como-usar)
+* [⚠️ Pré-requisitos](#pré-requisitos)
+* [🤝 Como Contribuir](#como-contribuir)
+* [👨‍💻 Autor](#autor)
 
 ---
 
