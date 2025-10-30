@@ -2,7 +2,6 @@
 
 ![Status](https://img.shields.io/badge/status-em_desenvolvimento-yellow)
 ![Plataforma](https://img.shields.io/badge/plataforma-Windows-blue)
-![Autor](https://img.shields.io/badge/autor-[Nathalya]-blue).
 
 Um script de automação (`.bat`) focado em agilizar tarefas comuns de suporte e manutenção de TI em ambientes Windows. Criado para centralizar ferramentas úteis em um menu interativo, facilitando a vida do técnico de suporte ou entusiasta.
 
