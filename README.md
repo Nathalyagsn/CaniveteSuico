@@ -66,7 +66,7 @@ O menu principal oferece acesso rápido às seguintes ferramentas:
 2.  Clique com o botão direito no arquivo `CaniveteSuico.bat` (ou o nome que você deu).
 3.  Selecione **"Executar como administrador"**.
 
->  **Atenção:** Executar como administrador é **essencial** para que a instalação de softwares, limpeza de cache e gerenciamento de serviços (como o de impressão) funcionem corretamente.
+>  **Atenção:** Executar como administrador é **essencial** para que a instalação de softwares, limpeza de cache e gerenciamento de serviços (como o de limpeza impressão) funcionem corretamente.
 
 ---
 
