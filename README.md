@@ -1,4 +1,4 @@
-# 🔪 Canivete Suíço de TI (Script Batch)
+# 🔪 Canivete Suíço
 
 ![Status](https://img.shields.io/badge/status-em_desenvolvimento-yellow)
 ![Plataforma](https://img.shields.io/badge/plataforma-Windows-blue)
