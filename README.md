@@ -2,7 +2,7 @@
 
 ![Status](https://img.shields.io/badge/status-em_desenvolvimento-yellow)
 ![Plataforma](https://img.shields.io/badge/plataforma-Windows-blue)
-![Autor](https://img.shields.io/badge/autor-[Seu Nome ou Apelido]-blue)
+![Autor](https://img.shields.io/badge/autor-[Nathalya]-blue).
 
 Um script de automação (`.bat`) focado em agilizar tarefas comuns de suporte e manutenção de TI em ambientes Windows. Criado para centralizar ferramentas úteis em um menu interativo, facilitando a vida do técnico de suporte ou entusiasta.
 
@@ -98,4 +98,4 @@ Se quiser adicionar uma nova ferramenta ao canivete:
 Projeto desenvolvido por **Nathalya Nascimento**.
 
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nathalyagsn)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/[seu-usuario-linkedin])
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/nathalya-gsn/)
