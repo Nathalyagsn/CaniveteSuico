@@ -95,7 +95,7 @@ Se quiser adicionar uma nova ferramenta ao canivete:
 
 ## 👨‍💻 Autor
 
-Projeto desenvolvido por **[Seu Nome ou Apelido]**.
+Projeto desenvolvido por **[Nathalya Nascimento]**.
 
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/nathalyagsn)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/[seu-usuario-linkedin])
