@@ -101,8 +101,10 @@ ECHO ============================================
 ECHO.
 
 ECHO Aguarde um momento...
-powershell -command "Get-CimInstance -ClassName Win32_PhysicalMemory | ForEach-Object {Write-Host ('Slot: ' + $_.BankLabel + ' | Velocidade: ' + $_.Speed + ' MHz')}"
+powershell -NoLogo -NoProfile -ExecutionPolicy Bypass -Command "Get-CimInstance -ClassName Win32_PhysicalMemory | ForEach-Object { Write-Output ('Slot: ' + $_.BankLabel + ' | Velocidade: ' + $_.Speed + ' MHz') }"
 
+ECHO.
+ECHO --------------------------------------------
 ECHO.
 ECHO Pressione qualquer tecla para voltar ao menu principal.
 PAUSE > NUL
