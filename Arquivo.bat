@@ -110,7 +110,6 @@ ECHO Pressione qualquer tecla para voltar ao menu principal.
 PAUSE > NUL
 GOTO menu_principal
 
-
 :limpar_cash
 CLS
 ECHO ====================================================
